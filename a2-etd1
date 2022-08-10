@@ -1,0 +1,64 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+void calvant( float nh,float sh, int nf, float vf );
+float salariobruto,salariofamilia,vantagens,inss,irpf,dedu;
+
+int main (){
+    int nf,vf;
+    float f=0.08,g,nh,sh;
+
+
+    printf(" Qual o numero de horas trabalhadas ? \n : ");
+    scanf ("%f",&nh);
+    printf(" \n Qual o valor da hora trabalhada ? \n : ");
+    scanf ("%f",&sh);
+
+    printf(" \n Qual o numero de filhos ? \n : ");
+    scanf ("%d",&nf);
+    printf(" \n Qual o valor por filho ? \n : ");
+    scanf ("%d",&vf);
+
+    calvant(nh,sh,vf,nf);
+    //calvant(nh,sh,nf,vf);
+    printf(" \n o valor do salario bruto e: %.2f \n",salariobruto);
+    printf("\n o valor do salario familia e: %d \n",salariofamilia );
+    printf("\n o valor das vantagens e : %.2f \n",vantagens);
+
+    printf("\n o valor do INSS = %.2f \n ",(salariobruto*f));
+
+    printf("\n qual o valor da taxa de IR ? \n :");
+    scanf("%f",&g);
+    printf("\n\n o valor do irpf = %.2f \n",(salariobruto*g));
+
+    printf("\n o valor da deducao e = %.2f \n\n\n", (salariobruto*f + salariobruto*g));
+
+    printf("\n\n fim\n\n");
+
+    return 0;
+}
+    void calvant( float nh,float sh, int nf, float vf )
+    {
+    salariobruto=nh*sh;
+    salariofamilia=nf*vf;
+    vantagens=salariobruto*salariofamilia;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
